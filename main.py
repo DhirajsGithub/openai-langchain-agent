@@ -10,8 +10,7 @@ from langchain_community.vectorstores import FAISS
 def main():
     load_dotenv()
 
-    # Load the OpenAI API key from the environment variable
-    if os.getenv("OPENAI_API_KEY") is None or os.getenv("OPENAI_API_KEY") == "":
+    if os.environ["OPENAI_API_KEY"] == st.secrets["OPENAI_API_KEY"] is None or os.environ["OPENAI_API_KEY"] == st.secrets["OPENAI_API_KEY"]:
         print("OPENAI_API_KEY is not set")
         exit(1)
     else:
